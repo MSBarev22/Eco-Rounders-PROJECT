@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clickable World Map</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    #world-map {
+      position: relative;
+    }
+
+    /* Style for each country */
+    .country {
+      position: absolute;
+      cursor: pointer;
+      background-color: rgba(255, 0, 0, 0.3); /* Semi-transparent red for demonstration */
+    }
+  </style>
 </head>
 <body>
-    
+
+<div id="world-map">
+  <!-- Image of the world map with an image map -->
+  <img src="world-map.png" alt="World Map" usemap="#worldmap">
+  
+  <!-- Image map with clickable areas -->
+  <map name="worldmap">
+    <area id="usa" class="country" shape="rect" coords="200,100,300,150" alt="USA" onclick="alert('USA clicked')">
+    <area id="canada" class="country" shape="rect" coords="150,50,250,100" alt="Canada" onclick="alert('Canada clicked')">
+    <area id="brazil" class="country" shape="rect" coords="400,300,500,350" alt="Brazil" onclick="alert('Brazil clicked')">
+    <area id="uk" class="country" shape="rect" coords="500,70,600,120" alt="UK" onclick="alert('UK clicked')">
+    <area id="india" class="country" shape="rect" coords="600,250,700,300" alt="India" onclick="alert('India clicked')">
+    <!-- You can add more areas for other countries and customize their coordinates -->
+  </map>
+</div>
+
 </body>
 </html>
