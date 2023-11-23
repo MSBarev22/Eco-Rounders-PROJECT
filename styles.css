@@ -1,3 +1,92 @@
-body{
-    background-color: aqua;
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../Eco-Rounders-PROJECT/images/Home-Background-Image.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: green;
+}
+
+.navbar a img{
+    height: 40px;
+    width: auto;
+}
+.top-countries-btn{
+    margin-top: 10px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: rgb(208, 255, 208);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.navbar a:hover {
+    background-color: rgb(208, 255, 208);
+    color: green;
+}
+
+.search-bar {
+    float: left;
+}
+
+.search-bar input[type=text] {
+    padding: 6px;
+    margin-top: 17px;
+    margin-bottom: 15px;
+    margin-right: 13px;
+    border-radius: 20px;
+}
+
+.search-bar button {
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 16px;
+    background: rgb(54, 54, 54);
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.search-bar button:hover {
+    background: rgb(221, 221, 221);
+    color: black;
+}
+
+hr {
+    height: 12px;
+    background-color: rgb(142, 255, 142);
+    filter: blur(1px);
+    margin: 0;
+}
+
+.content-box{
+    float: right;
+    width: 500px;
+    height: 500px;
+    background-color: green;
+}
+
+.content-image{
+    float: left;
+    margin: 15px;
+    margin-bottom: -15px;
+}
+
+.home-content{
+    color: rgb(142, 255, 142);
+    text-align:left;
+    font-size: x-large;
+    margin-right: 15px;
+    margin-left: 15px;
 }
