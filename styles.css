@@ -1,7 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url(../Eco-Rounders-PROJECT/images/Home-Background-Image.png);
-    background-size: 100%;
+    background-image: url(https://wallpapercave.com/wp/wp3278122.jpg);
     background-repeat: no-repeat;
     margin: 0;
 }
@@ -9,19 +8,24 @@ body {
 .navbar {
     overflow: hidden;
     background-color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.navbar a img{
+.navbar a img {
     height: 40px;
     width: auto;
 }
-.top-countries-btn{
-    margin-top: 10px;
+
+.top-countries-btn {
+    margin-top: 5px;
+    position: fixed;
+    margin-left:6%; 
+    
 }
 
 .navbar a {
-    float: left;
-    display: block;
     color: rgb(208, 255, 208);
     text-align: center;
     padding: 14px 16px;
@@ -34,35 +38,6 @@ body {
     color: green;
 }
 
-.search-bar {
-    float: left;
-}
-
-.search-bar input[type=text] {
-    padding: 6px;
-    margin-top: 17px;
-    margin-bottom: 15px;
-    margin-right: 13px;
-    border-radius: 20px;
-}
-
-.search-bar button {
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    margin-right: 16px;
-    background: rgb(54, 54, 54);
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-    color: white;
-}
-
-.search-bar button:hover {
-    background: rgb(221, 221, 221);
-    color: black;
-}
-
 hr {
     height: 12px;
     background-color: rgb(142, 255, 142);
@@ -70,22 +45,43 @@ hr {
     margin: 0;
 }
 
-.content-box{
-    float: right;
-    width: 500px;
-    height: 500px;
-    background-color: green;
+.search-container {
+    text-align: center;
+
 }
 
-.content-image{
+.search-bar {
+    display: inline-block;
+    margin-top: 13%; 
+  
+}
+
+.search-bar input[type=text] {
+    padding: 6px;
+    border-radius: 20px;
+    width: 1000px;
+    max-width: 1800px;
+    height: 25px;
+}
+
+.content-box {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 2%;
+    width: 100%;
+    flex-direction: row;
+}
+
+.content-image {
     float: left;
     margin: 15px;
     margin-bottom: -15px;
 }
 
-.home-content{
-    color: rgb(142, 255, 142);
-    text-align:left;
+.home-content {
+    color: rgb(250, 250, 250);
+    text-align: left;
     font-size: x-large;
     margin-right: 15px;
     margin-left: 15px;
