@@ -4,32 +4,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eco Rounders</title>
+  <style>
+
+  </style>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="navbar">
-    <a href="../Eco-Rounders-PROJECT/index.html"><img src="../Eco-Rounders-PROJECT/images/Planet-Logo-Image.png" alt="Home Button"></a>
+    <a href="#" onclick="rotateHomeButton(event)">
+      <img src="../Eco-Rounders-PROJECT/images/Planet-Logo-Image.png" alt="Home Button" class="rotate">
+    </a>
     <a class="top-countries-btn" href="#TopCountries">Top Ecological Countries</a>
   </div>
   <hr>
   <div class="search-container">
     <div class="search-bar">
-      <input type="text"  placeholder="Search for a country..." title="Type in a country">
-  </div>
-  <div class="content-box">
-    <div class="content-image">
-      <img src="../Eco-Rounders-PROJECT/images/Planet-Logo-Image.png" alt="Logo">
+    
+      <input type="text" placeholder="Search for a country..." title="Type in a country" oninput="filterFiles()" onkeydown="submitOnEnter(event)" onblur="hideResults()">
+    
+      <ul id="results" onclick="loadContent(event)"></ul>
     </div>
-    <div class="home-content">
-      <p>
-        Welcome to Eco Rounders - Igniting Change for a Greener World!<br><br>
-        Explore, Learn, Act: Embark on a journey of environmental discovery. Explore the beauty of our planet, gain insights into pressing ecological challenges, and find actionable steps to make a positive impact. Your journey towards a greener world starts here.<br><br>
-        Join Us in Creating Sustainable Change.
-      </p>
+    <div class="content-box">
+      <div class="content-image">
+        <img src="../Eco-Rounders-PROJECT/images/Planet-Logo-Image.png" alt="Logo">
+      </div>
+      <div class="home-content">
+        <p>
+          Welcome to Eco Rounders - Igniting Change for a Greener World!<br><br>
+          Explore, Learn, Act: Embark on a journey of environmental discovery. Explore the beauty of our planet, gain insights into pressing ecological challenges, and find actionable steps to make a positive impact. Your journey towards a greener world starts here.<br><br>
+          Join Us in Creating Sustainable Change.
+        </p>
+      </div>
     </div>
   </div>
-  <ul id="results"></ul>
 
-  
+  <script>
+    function rotateHomeButton(event) {
+      event.preventDefault();
+      const homeButton = document.querySelector('.rotate');
+      homeButton.classList.toggle('clicked');
+    }
+
+   
+    function filterFiles() {
+      const searchInput = document.querySelector('.search-bar input');
+      const resultsList = document.getElementById('results');
+      const files = ['Albania.html', 'Bulgaria.html','Afghanistan.html']; 
+
+      const searchTerm = searchInput.value.toLowerCase();
+
+      
+      resultsList.innerHTML = '';
+
+      // Filter files based on the search term
+      const filteredFiles = files.filter(file => file.toLowerCase().includes(searchTerm));
+
+     
+      filteredFiles.forEach(file => {
+        const listItem = document.createElement('li');
+        listItem.textContent = file;
+        resultsList.appendChild(listItem);
+      });
+
+      
+      resultsList.style.display = 'block';
+    }
+
+    
+    function loadContent(event) {
+      if (event.target.tagName === 'LI') {
+        const fileName = event.target.textContent;
+       
+        window.location.href = fileName; 
+      }
+    }
+
+    
+    function hideResults() {
+      setTimeout(() => {
+        const resultsList = document.getElementById('results');
+        resultsList.style.display = 'none';
+      }, 200); 
+    }
+
+    
+    function submitOnEnter(event) {
+      if (event.key === 'Enter') {
+        const topSuggestion = document.querySelector('#results li');
+        if (topSuggestion) {
+          topSuggestion.click(); 
+        }
+        hideResults(); 
+      }
+    }
+
+   
+    document.addEventListener('click', function (event) {
+      const searchContainer = document.querySelector('.search-container');
+      const resultsList = document.getElementById('results');
+      if (!searchContainer.contains(event.target) && !resultsList.contains(event.target)) {
+        hideResults();
+      }
+    });
+  </script>
 </body>
 </html>

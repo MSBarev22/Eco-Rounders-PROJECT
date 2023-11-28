@@ -86,3 +86,42 @@ hr {
     margin-right: 15px;
     margin-left: 15px;
 }
+.rotate {
+    transition: transform 1s ease-in-out;
+  }
+
+  .rotate.clicked {
+    transform: rotate(360deg);
+  }
+
+  
+  .search-bar {
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+ 
+  #results {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    z-index: 1;
+    width: 100%;
+    display: none; 
+  }
+
+  #results li {
+    margin-bottom: 0;
+    padding: 10px;
+    cursor: pointer;
+    color: blue;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  #results li:hover {
+    background-color: #f9f9f9;
+  }
