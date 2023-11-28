@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eco Rounders</title>
-  <style>
-
-  </style>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -45,41 +42,39 @@
       homeButton.classList.toggle('clicked');
     }
 
-   
+  
     function filterFiles() {
       const searchInput = document.querySelector('.search-bar input');
       const resultsList = document.getElementById('results');
-      const files = ['Albania.html', 'Bulgaria.html','Afghanistan.html']; 
+      const files = ['Albania.html', 'Bulgaria.html']; 
 
       const searchTerm = searchInput.value.toLowerCase();
 
-      
+  
       resultsList.innerHTML = '';
 
-      // Filter files based on the search term
+ 
       const filteredFiles = files.filter(file => file.toLowerCase().includes(searchTerm));
 
-     
+      
       filteredFiles.forEach(file => {
         const listItem = document.createElement('li');
-        listItem.textContent = file;
+        listItem.textContent = file.replace(/\.[^/.]+$/, ''); 
         resultsList.appendChild(listItem);
       });
 
-      
       resultsList.style.display = 'block';
     }
 
-    
+   
     function loadContent(event) {
       if (event.target.tagName === 'LI') {
-        const fileName = event.target.textContent;
-       
+        const fileName = event.target.textContent + '.html'; 
         window.location.href = fileName; 
       }
     }
 
-    
+   
     function hideResults() {
       setTimeout(() => {
         const resultsList = document.getElementById('results');
@@ -87,7 +82,7 @@
       }, 200); 
     }
 
-    
+    // Function to submit the top suggestion when Enter key is pressed
     function submitOnEnter(event) {
       if (event.key === 'Enter') {
         const topSuggestion = document.querySelector('#results li');
@@ -98,7 +93,6 @@
       }
     }
 
-   
     document.addEventListener('click', function (event) {
       const searchContainer = document.querySelector('.search-container');
       const resultsList = document.getElementById('results');
