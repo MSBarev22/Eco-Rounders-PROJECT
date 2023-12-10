@@ -160,12 +160,43 @@ hr {
     to { transform: rotate(360deg); }
   }
 
-  .flag{
+  .flag {
     text-align: right;
     margin-right: 35px;
+    perspective: 1000px;
 }
 
-  .flag img{
-    height: 80%;
-    width: 80%;
-  }
+.flag img {
+    height: 200px;
+    width: auto;
+    transition: transform 1s ease-in-out;
+}
+
+.flag.clicked img {
+    transform: rotateY(180deg);
+}
+
+.flag-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    color: white;
+    font-size: 16px; 
+    background-color: green;
+    border-radius: 10px;
+    transform: rotateY(0deg); 
+    transition: transform 1s ease-in-out, font-size 1s ease-in-out; 
+}
+
+.flag.clicked .flag-text {
+    transform: rotateY(180deg); 
+    font-size: 24px; 
+}

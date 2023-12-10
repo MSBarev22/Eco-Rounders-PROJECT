@@ -86,7 +86,10 @@ if (event.target.tagName === 'LI') {
       hideResults(); 
     }
   }
-
+  function rotateFlag() {
+    const flag = document.querySelector('.flag');
+    flag.classList.toggle('clicked');
+}
   document.addEventListener('click', function (event) {
     const searchContainer = document.querySelector('.search-container');
     const resultsList = document.getElementById('results');
