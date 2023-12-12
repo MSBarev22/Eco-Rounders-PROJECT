@@ -1,4 +1,7 @@
 #<h1 align="center"> Eco Rounders-PROJECT</h1>
+<p align="center">
+<img src="images/Planet-Logo-Image.png" alt="TEAM LOGO" height="300px" width="300px">
+</p>
 Eco Rounders is an inovative team, whose goal is to make information about the ecological problems around the world more easily accessible for everyone.
 
 <h2 align = "center"> Technologies used 💻:</h2>
