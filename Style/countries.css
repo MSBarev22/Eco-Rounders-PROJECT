@@ -161,15 +161,19 @@ hr {
   }
 
   .flag {
+    margin: 0;
     text-align: right;
-    margin-right: 35px;
     perspective: 1000px;
 }
 
 .flag img {
-    height: 200px;
+    height: 275px;
     width: auto;
     transition: transform 1s ease-in-out;
+}
+
+#flagImage {
+  rotate: y 180deg;
 }
 
 .flag.clicked img {
@@ -185,13 +189,12 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     transform: rotateY(180deg);
     backface-visibility: hidden;
     color: white;
     font-size: 16px; 
     background-color: green;
-    border-radius: 10px;
     transform: rotateY(0deg); 
     transition: transform 1s ease-in-out, font-size 1s ease-in-out; 
 }
