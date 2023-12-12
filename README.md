@@ -1,4 +1,4 @@
-# Eco Rounders-PROJECT
+#<h1 align="center"> Eco Rounders-PROJECT</h1>
 Eco Rounders is an inovative team, whose goal is to make information about the ecological problems around the world more easily accessible for everyone.
 
 <h2 align = "center"> Technologies used 💻:</h2>
